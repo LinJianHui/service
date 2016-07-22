@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
-<properties resource="conf/jdbc.properties"/>
+<properties resource="conf/generator.properties"/>
   <context id="context1">
     <jdbcConnection connectionURL="${jdbc_url}" driverClass="${jdbc_driverClassName}" password="${jdbc_password}" userId="${jdbc_username}" />
-    <javaModelGenerator targetPackage="com.avhr.model" targetProject="src/main/java" />
-    <sqlMapGenerator targetPackage="com.avhr.dao" targetProject="src/main/java" />
-    <javaClientGenerator targetPackage="com.avhr.dao" targetProject="src/main/java" type="XMLMAPPER" />
-    <table  tableName="User">
-    <generatedKey column="id" sqlStatement="MySql"/>
+    <javaModelGenerator targetPackage="${package.model}" targetProject="${project.java}" />
+    <sqlMapGenerator targetPackage="${package.mapper}" targetProject="${project.resources}" />
+    <javaClientGenerator targetPackage="${package.dao}" targetProject="${project.java}" type="XMLMAPPER" />
+    <table  tableName="%">
+    <generatedKey column="id" sqlStatement="MySql" identity="true"/>
     </table>
   </context>
 </generatorConfiguration>
